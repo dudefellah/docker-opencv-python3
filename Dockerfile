@@ -1,4 +1,4 @@
-FROM debian:stretch
+FROM debian:stretch-slim
 
 ARG OPENCV_VERSION=3.4.5
 
@@ -59,4 +59,4 @@ RUN mkdir -p ~/opencv && cd ~/opencv && \
     ln -s /usr/lib/python3.5/dist-packages/cv2/python-3.5/cv2.cpython-35m-$(uname -m)-linux-gnu.so cv2 && \
     ldconfig
 
-RUN rm -rf opencv && apt-get clean
+RUN rm -rf ~/opencv && apt-get clean
